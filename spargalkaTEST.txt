@@ -1,0 +1,20 @@
+// Создать fake request
+const req = { body: { ... } } as Request;
+
+// Создать fake response
+const res = {
+  status: jest.fn().mockReturnThis(),
+  json: jest.fn()
+} as unknown as Response;
+
+// Сказать что вернет функция (успех)
+mockFn.mockResolvedValue(результат);
+
+// Сказать что вернет функция (ошибка)
+mockFn.mockRejectedValue(new Error('текст'));
+
+// Проверить что функция была вызвана
+expect(функция).toHaveBeenCalled();
+
+// Проверить что функция была вызвана с параметром
+expect(функция).toHaveBeenCalledWith(параметр);
